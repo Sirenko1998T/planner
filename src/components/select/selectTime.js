@@ -5,7 +5,7 @@ export default function SelectTimes() {
       <div>
          <label>Time:</label>
          <select name='times'>
-            {days.map((i) => (
+            {timeSlots.map((i) => (
                <option value={i} key={i}>{i}</option>
             ))}
          </select>

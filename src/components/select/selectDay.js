@@ -1,4 +1,4 @@
-import { days } from "../days";
+let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
 export default function SelectDays() {
    return (
       <div>

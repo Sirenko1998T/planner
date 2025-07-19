@@ -58,3 +58,9 @@
    box-sizing: border-box;
    height: 40px;
 }
+
+.event-page {
+   width: 70%;
+   height: 600px;
+   margin: 0 auto;
+}
