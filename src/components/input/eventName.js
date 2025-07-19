@@ -1,8 +1,8 @@
-export default function NameEvent() {
+export default function NameEvent({ value, onChange }) {
    return (
-      <form>
-         <label> Name off the event:</label>
-         <input type='text' />
-      </form>
+
+
+      <input type='text' value={value} onChange={onChange} />
+
    )
 }

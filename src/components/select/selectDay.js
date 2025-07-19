@@ -1,11 +1,11 @@
 let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-export default function SelectDays() {
+export default function SelectDays({ onChange }) {
    return (
       <div>
-         <label>Day:</label>
-         <select name='days'>
+
+         <select name='days' onChange={onChange} >
             {days.map((i) => (
-               <option value={i} key={i}>{i}</option>
+               <option value={i} key={i} >{i}</option>
             ))}
          </select>
       </div>

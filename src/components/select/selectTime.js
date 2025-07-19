@@ -1,10 +1,10 @@
 import { timeSlots } from "../timeSlots";
 
-export default function SelectTimes() {
+export default function SelectTimes({ onChange }) {
    return (
       <div>
-         <label>Time:</label>
-         <select name='times'>
+
+         <select name='times' onChange={onChange}>
             {timeSlots.map((i) => (
                <option value={i} key={i}>{i}</option>
             ))}

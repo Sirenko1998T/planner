@@ -1,11 +1,11 @@
 let participants = ['Dmitriy', 'Lisa', 'Oleg', 'Andriy']
-export default function Participants() {
+export default function Participants({ onChange }) {
    return (
       <div>
-         <label>Participants:</label>
-         <select name='participants'>
+
+         <select name='participants' onChange={onChange}>
             {participants.map((i) => (
-               <option value={i} key={i}>{i}</option>
+               <option value={i} key={i} >{i}</option>
             ))}
          </select>
       </div>
