@@ -1,0 +1,60 @@
+.calendar-layout {
+   width: 90%;
+   margin: 0 auto;
+}
+
+.days,
+.wrapper-slot {
+   display: flex;
+   width: 80%;
+   margin: 0 auto;
+}
+
+.wrapper-slot {
+   justify-content: flex-start;
+
+}
+
+.days__day {
+   width: 16.6667%;
+
+   border: 1px solid black;
+   text-align: center;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.time-slots {
+   width: 17%;
+   display: flex;
+   flex-direction: column;
+}
+
+.time-slots__timeslot {
+   width: 100%;
+   border: 1px solid black;
+   text-align: center;
+   padding: 10px;
+   box-sizing: border-box;
+   height: 40px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.empty-cells {
+   width: 85%;
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+}
+
+.empty-cells__empty-cell {
+   width: 20%;
+
+   border: 1px solid black;
+   box-sizing: border-box;
+   height: 40px;
+}
