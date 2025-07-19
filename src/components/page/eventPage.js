@@ -25,7 +25,15 @@ export default function EventPage() {
          <SelectDays onChange={(e) => setselectDays(e.target.value)} />
          <label>Time:</label>
          <SelectTimes onChange={(e) => setselectTimes(e.target.value)} />
-         <Cancel onClick={() => setcancel(!cancel)} />
+         <Cancel onClick={() => {
+            setcancel(!cancel);
+            localStorage.setItem('nameEvent', nameEvent);
+            localStorage.setItem('participants', participants);
+            localStorage.setItem('selectDays', selectDays);
+            localStorage.setItem('selectTimes', selectTimes);
+            navigate('/')
+         }} />
+
          <Create />
       </div>
    )
