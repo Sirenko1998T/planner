@@ -1,5 +1,5 @@
 let days = ['Name', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-
+export { days };
 export default function Days() {
 
    return (
