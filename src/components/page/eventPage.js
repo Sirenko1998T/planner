@@ -5,8 +5,10 @@ import SelectTimes from "../select/selectTime"
 import Cancel from "../button/cancel"
 import Create from "../button/create"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function EventPage() {
+   let navigate = useNavigate();
    let [nameEvent, setNameEvent] = useState('');
    let [participants, setParticipants] = useState(null);
    let [selectDays, setselectDays] = useState(null);
@@ -26,11 +28,21 @@ export default function EventPage() {
          <label>Time:</label>
          <SelectTimes onChange={(e) => setselectTimes(e.target.value)} />
          <Cancel onClick={() => {
+
+            let submitData = {
+               nameEvent: nameEvent,
+               participants: participants,
+               selectDays: selectDays,
+               selectTimes: selectTimes,
+            }
+            let savedData = JSON.parse(localStorage.getItem('submitData'));
+            if (!Array.isArray(savedData)) {
+               savedData = [];
+            }
+            savedData.push(submitData);
+            localStorage.setItem('submitData', JSON.stringify(savedData))
             setcancel(!cancel);
-            localStorage.setItem('nameEvent', nameEvent);
-            localStorage.setItem('participants', participants);
-            localStorage.setItem('selectDays', selectDays);
-            localStorage.setItem('selectTimes', selectTimes);
+
             navigate('/')
          }} />
 

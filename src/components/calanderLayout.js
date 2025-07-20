@@ -5,19 +5,16 @@ import EmptyCells from "./emptyCells"
 import NewEvent from "./button/newEvent"
 import { useEffect, useState } from "react"
 export default function CalendarLayout() {
-   let [nameEvent, setNameEvent] = useState('');
-   let [participants, setParticipants] = useState('');
-   let [selectDays, setselectDays] = useState('');
-   let [selectTimes, setselectTimes] = useState('');
+   let [data, setData] = useState([]);
+
    useEffect(() => {
-      let storageNameEvent = localStorage.getItem('nameEvent');
-      let storagepParticipants = localStorage.getItem('participants');
-      let storageSelectDays = localStorage.getItem('selectDays');
-      let storageSelectTimes = localStorage.getItem('selectTimes');
-      storageNameEvent && setNameEvent(storageNameEvent);
-      storagepParticipants && setParticipants(storagepParticipants);
-      storageSelectDays && setselectDays(storageSelectDays);
-      storageSelectTimes && setselectTimes(storageSelectTimes);
+      let submitData = localStorage.getItem('submitData');
+      if (submitData) {
+         let parsed = JSON.parse(submitData);
+         setData(Array.isArray(parsed) ? parsed : [parsed]);
+      }
+
+
    }, [])
    return (
       <div className="calendar">
@@ -27,7 +24,7 @@ export default function CalendarLayout() {
             <div className="wrapper-slot">
 
                <TimeSlots />
-               <EmptyCells />
+               <EmptyCells appointments={data} />
 
             </div>
 

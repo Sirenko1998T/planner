@@ -4,8 +4,8 @@ export default function TimeSlots() {
 
    return (
       <div className="time-slots">
-         {timeSlots.map((i, index) => (
-            <div className="time-slots__timeslot" key={index}>{i}</div>
+         {timeSlots.map((i) => (
+            <div className="time-slots__timeslot" key={i}>{i}</div>
          ))}
       </div>
    )
