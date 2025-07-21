@@ -30,6 +30,7 @@ export default function EventPage() {
          <Cancel onClick={() => {
 
             let submitData = {
+               id: Date.now(),
                nameEvent: nameEvent,
                participants: participants,
                selectDays: selectDays,

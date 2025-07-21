@@ -16,6 +16,10 @@ export default function CalendarLayout() {
 
 
    }, [])
+   let updateStorage = (newData) => {
+      localStorage.setItem("submitData", JSON.stringify(newData));
+      setData(newData)
+   }
    return (
       <div className="calendar">
          <NewEvent />
@@ -24,7 +28,7 @@ export default function CalendarLayout() {
             <div className="wrapper-slot">
 
                <TimeSlots />
-               <EmptyCells appointments={data} />
+               <EmptyCells appointments={data} updateStorage={updateStorage} />
 
             </div>
 
