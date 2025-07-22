@@ -4,9 +4,9 @@ export default function Participants({ onChange }) {
    return (
       <div>
 
-         <select name='participants' onChange={onChange}>
+         <select className="select-name" name='participants' onChange={onChange}>
             {participants.map((i) => (
-               <option value={i.name} key={i.name} >{i.name}</option>
+               <option className=" option-name" value={i.name} key={i.name} >{i.name}</option>
             ))}
          </select>
       </div>

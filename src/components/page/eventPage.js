@@ -17,17 +17,22 @@ export default function EventPage() {
 
    return (
       <div className='event-page'>
-         <form>
-            <label> Name off the event:</label>
-            <NameEvent value={nameEvent} onChange={(e) => setNameEvent(e.target.value)} />
+         <form className="new-event-form">
+            <div className="form-name-event">
+               <label> Name off the event:</label>
+               <NameEvent value={nameEvent} onChange={(e) => setNameEvent(e.target.value)} />
+            </div>
+            <div className="form-participants"> <label>Participants:</label>
+               <Participants onChange={(e) => setParticipants(e.target.value)} /></div>
+            <div className="form-day"> <label>Day:</label>
+               <SelectDays onChange={(e) => setselectDays(e.target.value)} /></div>
+            <div className="form-time"> <label>Time:</label>
+               <SelectTimes onChange={(e) => setselectTimes(e.target.value)} /></div>
+
          </form>
-         <label>Participants:</label>
-         <Participants onChange={(e) => setParticipants(e.target.value)} />
-         <label>Day:</label>
-         <SelectDays onChange={(e) => setselectDays(e.target.value)} />
-         <label>Time:</label>
-         <SelectTimes onChange={(e) => setselectTimes(e.target.value)} />
-         <Create onClick={() => {
+
+
+         <div className="event-page-action-btn"><Create onClick={() => {
 
             let submitData = {
                id: Date.now(),
@@ -51,7 +56,8 @@ export default function EventPage() {
             navigate('/')
          }} />
 
-         <Cancel />
+            <Cancel /></div>
+
       </div>
    )
 }

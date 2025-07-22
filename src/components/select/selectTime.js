@@ -4,9 +4,9 @@ export default function SelectTimes({ onChange }) {
    return (
       <div>
 
-         <select name='times' onChange={onChange}>
+         <select className="select-times" name='times' onChange={onChange}>
             {timeSlots.map((i) => (
-               <option value={i} key={i}>{i}</option>
+               <option className='times-option' value={i} key={i}>{i}</option>
             ))}
          </select>
       </div>

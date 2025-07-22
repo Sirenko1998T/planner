@@ -1,5 +1,5 @@
 export default function Remove({ onClick }) {
    return (
-      <button onClick={onClick}> x</button>
+      <button className="remove" onClick={onClick}> x</button>
    )
 }

@@ -3,9 +3,9 @@ export default function SelectDays({ onChange }) {
    return (
       <div>
 
-         <select name='days' onChange={onChange} >
+         <select name='days' onChange={onChange} className="select-days" >
             {days.map((i) => (
-               <option value={i} key={i} >{i}</option>
+               <option className="option-days" value={i} key={i} >{i}</option>
             ))}
          </select>
       </div>

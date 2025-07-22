@@ -30,9 +30,13 @@ export default function CalendarLayout() {
    }
    return (
       <div className="calendar">
+         <header className="header">
+            <div className="header__title"> Zeranta Group</div>
+            <div className="header__navigation">  <NewEvent />
+               <Filter onChange={selectFilter} /></div>
 
-         <NewEvent />
-         <Filter onChange={selectFilter} />
+         </header>
+
          <div className="calendar-layout">
             <Days />
             <div className="wrapper-slot">

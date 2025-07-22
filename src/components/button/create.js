@@ -3,7 +3,7 @@
 export default function Create({ onClick }) {
 
    return (
-      <button onClick={onClick}>Create</button>
+      <button className="create" onClick={onClick}>Create</button>
    )
 
 }
