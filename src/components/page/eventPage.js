@@ -13,7 +13,7 @@ export default function EventPage() {
    let [participants, setParticipants] = useState(null);
    let [selectDays, setselectDays] = useState(null);
    let [selectTimes, setselectTimes] = useState(null);
-   let [cancel, setcancel] = useState(false)
+   let [create, setCreate] = useState(false)
 
    return (
       <div className='event-page'>
@@ -27,7 +27,7 @@ export default function EventPage() {
          <SelectDays onChange={(e) => setselectDays(e.target.value)} />
          <label>Time:</label>
          <SelectTimes onChange={(e) => setselectTimes(e.target.value)} />
-         <Cancel onClick={() => {
+         <Create onClick={() => {
 
             let submitData = {
                id: Date.now(),
@@ -42,12 +42,12 @@ export default function EventPage() {
             }
             savedData.push(submitData);
             localStorage.setItem('submitData', JSON.stringify(savedData))
-            setcancel(!cancel);
+            setCreate(!create);
 
             navigate('/')
          }} />
 
-         <Create />
+         <Cancel />
       </div>
    )
 }

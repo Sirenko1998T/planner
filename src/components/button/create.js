@@ -1,7 +1,9 @@
-import { useNavigate } from "react-router-dom"
-export default function Create() {
-   let navigate = useNavigate();
+
+
+export default function Create({ onClick }) {
+
    return (
-      <button onClick={() => navigate('/')}>Create</button>
+      <button onClick={onClick}>Create</button>
    )
+
 }
