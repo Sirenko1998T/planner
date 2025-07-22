@@ -40,6 +40,10 @@ export default function EventPage() {
             if (!Array.isArray(savedData)) {
                savedData = [];
             }
+            let error = savedData.some((event) => event.selectDays === selectDays && event.selectTimes === selectTimes);
+            if (error) {
+               alert('error')
+            }
             savedData.push(submitData);
             localStorage.setItem('submitData', JSON.stringify(savedData))
             setCreate(!create);
